@@ -59,7 +59,7 @@ while True:
     if MU.rule and all(ch in "MIU" for ch in MU.rule):
         print("This is correct")
         break
-    else:   
+    else:       
         print("This is incorrect")
         break
 
