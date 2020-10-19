@@ -11,14 +11,6 @@ class MU:
         self.rule = rule
         self.newStr = newStr
 
-    @staticmethod
-    def instruction():
-        print(Instructions)
-
-    @staticmethod
-    def help():
-        print(help)
-
     def rule_one(self):
         self.rule = input("Enter a rule 1-4 or q to quit: ")
         if self.rule == "1" and self.my_str.endswith("I"):
@@ -39,7 +31,36 @@ class MU:
             self.newStr = self.newStr.replace('UU', '')
 
     def error(self):
-        pass
+        try:
+            if self.rule == "":
+                print(help)
+        except:
+            print("Please enter a rule number")
 
 
 call = MU
+
+
+def instruction():
+    print(Instructions)
+
+
+instruction()
+
+
+def print_key_info():
+    print(help)
+
+
+print_key_info()
+MU.rule = input("Enter a combination of M, U and I: ")
+
+while True:
+    if MU.rule and all(ch in "MIU" for ch in MU.rule):
+        print("This is correct")
+        break
+    else:   
+        print("This is incorrect")
+        break
+
+MU.help = input("Enter a rule 1-4 or q to quit: ")
