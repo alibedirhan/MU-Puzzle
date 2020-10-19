@@ -15,13 +15,14 @@ class MU:
     def instruction():
         print(Instructions)
 
-    def help(self):
+    @staticmethod
+    def help():
         print(help)
 
     def rule_one(self):
         self.rule = input("Enter a rule 1-4 or q to quit: ")
-        if self.rule == "1" and self.mystr.endswith("I"):
-            self.newStr = "".join((self.mystr, "U"))
+        if self.rule == "1" and self.my_str.endswith("I"):
+            self.newStr = "".join((self.my_str, "U"))
             print(self.newStr)
 
     def rule_two(self):
@@ -31,10 +32,13 @@ class MU:
 
     def rule_three(self):
         if self.rule == "3" and "III" in self.my_str:
-            self.newStr = self.newStr[:]
-        pass
+            self.newStr = self.newStr.replace('III', 'U')
 
     def rule_four(self):
+        if self.rule == "4" and "UU" in self.my_str:
+            self.newStr = self.newStr.replace('UU', '')
+
+    def error(self):
         pass
 
 
